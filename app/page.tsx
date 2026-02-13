@@ -1,11 +1,9 @@
 import Link from "next/link";
-import { Zap, LayoutGrid, Type, Palette, Component, Cuboid, ArrowRight, Bot, Copy, Terminal, Activity, Download, FileJson, TextCursor } from "lucide-react";
+import { Zap, LayoutGrid, Type, Palette, Component, ArrowRight, Bot, Copy, Terminal, Activity, Download, FileJson, TextCursor } from "lucide-react";
 import { ColorPalette } from "./components/ColorPalette";
 import { TypeScale } from "./components/TypeScale";
 import { PrimitivesPreview } from "./components/PrimitivesPreview";
 import { AnimationShowcase } from "./components/AnimationShowcase";
-import { IsoCard } from "./components/IsoCard";
-import { CreatorWidget } from "./components/CreatorWidget";
 import { IconShowcase } from "./components/IconShowcase";
 import { DocSidebar } from "./components/DocSidebar";
 import { GlassTechCard } from "./components/GlassTechCard";
@@ -127,20 +125,6 @@ export default function Home() {
                             <div className="md:col-span-2 xl:col-span-1"><TransactionList /></div>
                             <div className="md:col-span-1 xl:col-span-1"><MessageInterface /></div>
                             <div className="md:col-span-1 xl:col-span-1"><MediaUpload /></div>
-                        </div>
-                    </section>
-
-                    {/* Isometric Engine */}
-                    <section id="isometric" className="scroll-mt-20">
-                        <SectionHeader title="Isometric Engine" subtitle="Marketing & Promotional Assets" icon={Cuboid} />
-
-                        <div className="relative h-[600px] w-full bg-grid-zinc border border-white/10 overflow-hidden flex items-center justify-center bg-[#050505]">
-                            <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/10 to-transparent"></div>
-                            <div className="relative z-10">
-                                <IsoCard depth="high">
-                                    <CreatorWidget />
-                                </IsoCard>
-                            </div>
                         </div>
                     </section>
 

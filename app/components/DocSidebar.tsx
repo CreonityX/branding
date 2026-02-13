@@ -60,7 +60,6 @@ export function DocSidebar() {
 
                 <SidebarGroup title="System">
                     <SidebarLink id="widgets" active={activeSection === "widgets"} onClick={(e) => scrollTo("widgets", e)}>Mission Control</SidebarLink>
-                    <SidebarLink id="isometric" active={activeSection === "isometric"} onClick={(e) => scrollTo("isometric", e)}>Isometric Engine</SidebarLink>
                     <SidebarLink id="animations" active={activeSection === "animations"} onClick={(e) => scrollTo("animations", e)}>Kinetic Physics</SidebarLink>
                 </SidebarGroup>
 
