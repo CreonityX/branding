@@ -3,6 +3,7 @@ import { Zap, LayoutGrid, Type, Palette, Component, Cuboid, ArrowRight, Bot, Cop
 import { ColorPalette } from "./components/ColorPalette";
 import { TypeScale } from "./components/TypeScale";
 import { ComponentLibrary } from "./components/ComponentLibrary";
+import { PrimitivesPreview } from "./components/PrimitivesPreview";
 import { AnimationShowcase } from "./components/AnimationShowcase";
 import { IsoCard } from "./components/IsoCard";
 import { CreatorWidget } from "./components/CreatorWidget";
@@ -148,9 +149,14 @@ export default function Home() {
                         </section>
 
                         <section id="icons" className="scroll-mt-20">
-                            <h2 className="text-4xl font-display font-bold text-white mb-12 flex items-center gap-4">
-                                <Zap className="w-8 h-8 text-zinc-700" /> Iconography
-                            </h2>
+                            <div className="flex items-center justify-between mb-12">
+                                <h2 className="text-4xl font-display font-bold text-white flex items-center gap-4">
+                                    <Zap className="w-8 h-8 text-zinc-700" /> Iconography
+                                </h2>
+                                <Link href="/icons" className="group flex items-center gap-2 text-xs font-mono text-zinc-500 hover:text-[#a3e635] transition-colors">
+                                    VIEW_ALL_GLYPHS <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                                </Link>
+                            </div>
                             <IconShowcase />
                         </section>
 
@@ -162,10 +168,15 @@ export default function Home() {
                         </section>
 
                         <section id="primitives" className="scroll-mt-20">
-                            <h2 className="text-4xl font-display font-bold text-white mb-12 flex items-center gap-4">
-                                <Component className="w-8 h-8 text-zinc-700" /> Interface Primitives
-                            </h2>
-                            <ComponentLibrary />
+                            <div className="flex items-center justify-between mb-12">
+                                <h2 className="text-4xl font-display font-bold text-white flex items-center gap-4">
+                                    <Component className="w-8 h-8 text-zinc-700" /> Interface Primitives
+                                </h2>
+                                <Link href="/primitives" className="group flex items-center gap-2 text-xs font-mono text-zinc-500 hover:text-[#a3e635] transition-colors">
+                                    VIEW_ALL_PRIMITIVES <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                                </Link>
+                            </div>
+                            <PrimitivesPreview />
                         </section>
                     </div>
 
