@@ -50,11 +50,6 @@ export function PrimitivesPreview() {
 
             </div>
 
-            <div className="flex justify-center">
-                <Link href="/primitives" className="group flex items-center gap-2 px-6 py-3 border border-zinc-700 hover:border-[#a3e635] hover:bg-[#a3e635]/10 hover:text-[#a3e635] transition-all text-sm font-mono text-zinc-400">
-                    <Component className="w-4 h-4" /> OPEN_PRIMITIVES_ATLAS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-            </div>
         </div>
     );
 }
