@@ -129,9 +129,13 @@ export default function Home() {
                         </div>
                     </section>
 
-                    {/* Kinetic Physics */}
                     <section id="animations" className="scroll-mt-20">
-                        <SectionHeader title="Kinetic Physics" subtitle="Motion & Interaction" icon={Activity} />
+                        <SectionHeader
+                            title="Kinetic Physics"
+                            subtitle="Motion & Interaction"
+                            icon={Activity}
+                            link={{ href: "/kinetic", label: "VIEW_MOTION_ATLAS" }}
+                        />
                         <AnimationShowcase />
                     </section>
 
@@ -234,6 +238,20 @@ export default function Home() {
     );
 }
 
+
+
+function WidgetsLink() {
+    return (
+        <Link href="/widgets" className="group block p-6 bg-zinc-900/50 border border-zinc-800 hover:border-[#a3e635] transition-all duration-500 ease-out hover:scale-105">
+            <div className="flex items-center justify-between mb-4">
+                <LayoutGrid className="w-6 h-6 text-zinc-500 group-hover:text-[#a3e635]" />
+                <span className="text-xs font-mono text-zinc-600">v7.0</span>
+            </div>
+            <h2 className="text-xl font-bold text-white mb-2 font-display">MISSION_CONTROL</h2>
+            <p className="text-sm text-zinc-500 font-mono">Unified grid & Industrial components.</p>
+        </Link>
+    );
+}
 
 
 function PromptCard({ title, prompt }: { title: string, prompt: string }) {

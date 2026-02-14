@@ -25,8 +25,8 @@ export function WidgetShell({
 }: WidgetShellProps) {
     return (
         <div className={cn(
-            "group relative border border-zinc-800 bg-zinc-900/40 backdrop-blur-md overflow-hidden flex flex-col transition-all duration-300 hover:border-zinc-700 hover:bg-zinc-900/60",
-            allowResize && "resize-y overflow-auto min-h-[300px]",
+            "group relative border border-zinc-800 bg-zinc-900/40 backdrop-blur-md overflow-hidden flex flex-col transition-all duration-500 ease-out hover:scale-[1.02] hover:border-zinc-700 hover:bg-zinc-900/60 hover:shadow-2xl hover:shadow-black/50 hover:z-10",
+            allowResize && "resize-y min-h-[180px]",
             className
         )}>
 
@@ -77,6 +77,12 @@ export function WidgetShell({
 
             {/* 4. Background Effects */}
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none" />
+
+            {/* 5. Industrial Corner Brackets */}
+            <div className="absolute -top-[1px] -left-[1px] w-4 h-4 border-t-2 border-l-2 border-zinc-600 rounded-tl-sm pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute -top-[1px] -right-[1px] w-4 h-4 border-t-2 border-r-2 border-zinc-600 rounded-tr-sm pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute -bottom-[1px] -left-[1px] w-4 h-4 border-b-2 border-l-2 border-zinc-600 rounded-bl-sm pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute -bottom-[1px] -right-[1px] w-4 h-4 border-b-2 border-r-2 border-zinc-600 rounded-br-sm pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
 
         </div>
     );
