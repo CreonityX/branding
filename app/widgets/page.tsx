@@ -3,12 +3,7 @@
 import { SubSidebar } from "../components/SubSidebar";
 import { SectionHeader } from "../components/SectionHeader";
 import { WidgetShell } from "../components/WidgetShell";
-import { Wallet, CloudUpload, Layout, Users, Megaphone, Search, CheckSquare, Bell, Calendar, Bot, PieChart } from "lucide-react";
-import { RevenueChart } from "../components/widgets/RevenueChart";
-import { UploadNexus } from "../components/widgets/UploadNexus";
-import { GigBoard } from "../components/widgets/GigBoard";
-import { CampaignCommand } from "../components/widgets/CampaignCommand";
-import { TalentScout } from "../components/widgets/TalentScout";
+import { Wallet, CloudUpload, Layout, Users, Megaphone, Search, CheckSquare, Bell, Calendar, Bot, PieChart, User } from "lucide-react";
 
 // FINANCIAL WIDGETS
 import { TotalEarningsCard } from "../components/widgets/creator/financial/TotalEarningsCard";
@@ -38,10 +33,13 @@ import { ApprovalQueue } from "../components/widgets/brand/command/ApprovalQueue
 // MARKETPLACE WIDGETS
 import { TalentGrid } from "../components/widgets/brand/marketplace/TalentGrid";
 import { GigFinder } from "../components/widgets/creator/marketplace/GigFinder";
+
 // SYSTEM CORE WIDGETS
 import { MessageTerminal } from "../components/widgets/shared/os/MessageTerminal";
 import { NotificationCenter } from "../components/widgets/shared/os/NotificationCenter";
 import { SettingsHub } from "../components/widgets/shared/os/SettingsHub";
+import { UserProfileHeader } from "../components/widgets/shared/os/UserProfileHeader";
+import { MediaUpload } from "../components/widgets/MediaUpload";
 
 import { Briefcase } from "lucide-react";
 
@@ -81,21 +79,7 @@ export default function WidgetsPage() {
                     {
                         title: "System Core",
                         items: [
-                            { id: "system-core", label: "Utilities" }
-                        ]
-                    },
-                    {
-                        title: "Creator Suite",
-                        items: [
-                            { id: "creator-suite", label: "Earnings & Upload" },
-                            { id: "creator-suite", label: "Gig Board" },
-                        ]
-                    },
-                    {
-                        title: "Brand Suite",
-                        items: [
-                            { id: "brand-suite", label: "Campaigns" },
-                            { id: "brand-suite", label: "Talent Scout" },
+                            { id: "system-core", label: "OS Utilities" }
                         ]
                     }
                 ]}
@@ -111,7 +95,9 @@ export default function WidgetsPage() {
                             WIDGET_ECOSYSTEM
                         </h1>
                         <p className="text-zinc-500 font-mono max-w-2xl">
-                            v13.0 // A comprehensive library of functional, responsive dashboard widgets for Creators and Brands.
+                            v17.0 // FINAL_BUILD. Comprehensive Dashboard OS.
+                            <br />
+                            <span className="text-[#a3e635]">ALL SYSTEMS OPERATIONAL.</span>
                         </p>
                     </div>
 
@@ -258,72 +244,31 @@ export default function WidgetsPage() {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <WidgetShell title="Terminal_Link" subtitle="Encrypted Chat" icon={Search} className="h-96 lg:col-span-2">
-                                <MessageTerminal />
+                            {/* Row 1: Profile & Upload */}
+                            <WidgetShell title="User_Identity" subtitle="Profile Stats" icon={User} className="h-[280px]">
+                                <UserProfileHeader />
                             </WidgetShell>
 
-                            <div className="space-y-8 flex flex-col h-96">
-                                <WidgetShell title="Alert_Stream" subtitle="Live Feed" icon={Bell} className="flex-1">
-                                    <NotificationCenter />
-                                </WidgetShell>
+                            <WidgetShell title="Upload_Nexus" subtitle="Asset Ingest" icon={CloudUpload} className="h-[280px]">
+                                <MediaUpload />
+                            </WidgetShell>
+
+                            <div className="flex flex-col h-[280px]">
                                 <WidgetShell title="Config_Hub" subtitle="User Preferences" icon={Users} className="flex-1">
                                     <SettingsHub />
                                 </WidgetShell>
                             </div>
-                        </div>
-                    </section>
-                    {/* CREATOR SUITE OLD */}
-                    <section id="creator-suite">
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="h-px flex-1 bg-zinc-800" />
-                            <span className="font-mono text-xs text-[#a3e635] tracking-widest">CREATOR_SUITE</span>
-                            <div className="h-px flex-1 bg-zinc-800" />
-                        </div>
 
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            {/* 1. Earnings Hub */}
-                            <WidgetShell title="Earnings_Hub" subtitle="Revenue Analytics" icon={Wallet} className="h-96">
-                                <RevenueChart />
+                            {/* Row 2: Communication */}
+                            <WidgetShell title="Terminal_Link" subtitle="Encrypted Chat" icon={Search} className="h-[400px] lg:col-span-2">
+                                <MessageTerminal />
                             </WidgetShell>
 
-                            {/* 2. Upload Nexus */}
-                            <WidgetShell title="Upload_Nexus" subtitle="Media Processing" icon={CloudUpload} className="h-96">
-                                <UploadNexus />
-                            </WidgetShell>
-
-                            {/* 3. Gig Board */}
-                            <WidgetShell title="Gig_Board" subtitle="Active Opportunities" icon={Layout} className="h-96">
-                                <GigBoard />
-                            </WidgetShell>
-
-                            {/* 4. Audience Pulse */}
-                            <WidgetShell title="Audience_Pulse" subtitle="Real-time Demographics" icon={Users} className="h-96">
-                                <div className="p-8 flex items-center justify-center h-full text-zinc-600 font-mono text-xs">
-                                    [WIDGET_UNDER_CONSTRUCTION]
-                                </div>
+                            <WidgetShell title="Alert_Stream" subtitle="Live Feed" icon={Bell} className="h-[400px]">
+                                <NotificationCenter />
                             </WidgetShell>
                         </div>
                     </section>
-
-                    {/* BRAND SUITE */}
-                    <section id="brand-suite">
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="h-px flex-1 bg-zinc-800" />
-                            <span className="font-mono text-xs text-purple-400 tracking-widest">BRAND_SUITE</span>
-                            <div className="h-px flex-1 bg-zinc-800" />
-                        </div>
-
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            <WidgetShell title="Campaign_Command" subtitle="ROI Tracker" icon={Megaphone} className="h-96">
-                                <CampaignCommand />
-                            </WidgetShell>
-
-                            <WidgetShell title="Talent_Scout" subtitle="Discover Creators" icon={Search} className="h-96">
-                                <TalentScout />
-                            </WidgetShell>
-                        </div>
-                    </section>
-
                 </div>
             </main>
         </div>
